@@ -7,7 +7,7 @@ author:
 thanks: "Code and data are available at: https://github.com/Jingying-yu/marriage_data_analysis.git."
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "This analysis examines the impact of marriage on people’s financial and social well-being, using data from Toronto. The study uses marriage records and demographic surveys from official Toronto sources to explore how marriage affects factors like income, employment, and divorce rates. The data is analyzed with a regression model to find patterns. The findings show that getting married often leads to higher income and better job stability for individuals. Additionally, marriages that happen later in life are less likely to end in divorce. These insights help highlight how marriage can play a role in improving financial stability and could be useful for family planning and public policies in Toronto."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -19,6 +19,7 @@ bibliography: references.bib
 #| message: false
 
 library(tidyverse)
+library(ggplot2)
 
 data <- read_csv(here::here("data/analysis_data/cleaned_data.csv"))
 
@@ -33,81 +34,14 @@ The remainder of this paper is structured as follows. @sec-data....
 
 
 
-# Data {#sec-data}
-
-Some of our data is of penguins (@fig-bills), from @palmerpenguins.
-
-```{r}
-#| label: fig-bills
-#| fig-cap: Bills of penguins
-#| echo: false
-
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = "none") +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
-```
-
-Talk more about it.
-
-And also planes (@fig-planes). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
-
-```{r}
-#| label: fig-planes
-#| fig-cap: Relationship between wing length and width
-#| echo: false
-#| warning: false
-#| message: false
-
-analysis_data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
-
-analysis_data |> 
-  ggplot(aes(x = width, y = length)) +
-  geom_point(alpha = 0.8) +
-  theme_minimal() +
-  labs(x = "Wing width (mm)",
-       y = "Wing length (mm)")
-```
-
-Talk way more about it. 
-
-
-
-
-
 # Results
 
 Our results are summarized in @tbl-modelresults.
 
 ```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
+ggplot(data = data, aes(x = year, y = marriage_licenses)) +
+  geom_point(color = "blue")
 
-library(rstanarm)
-
-first_model <-
-  readRDS(file = here::here("models/first_model.rds"))
-```
-
-```{r}
-#| echo: false
-#| eval: true
-#| label: tbl-modelresults
-#| tbl-cap: "Explanatory models of flight time based on wing width and wing length"
-#| warning: false
-
-modelsummary::modelsummary(
-  list(
-    "First model" = first_model
-  ),
-  statistic = "mad",
-  fmt = 2
-)
 ```
 
 
