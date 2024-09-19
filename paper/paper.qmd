@@ -31,7 +31,7 @@ Data from @OpenDataToronto
 
 
 # Results
-
+The below graph reflects the amount of couples who got married each year between 2011 and 2024.
 
 ```{r}
 ggplot(data = data, aes(x = year, y = marriage_licenses)) +

@@ -21,4 +21,4 @@ cleaned_data <-
   mutate(date = lubridate::ymd(paste(year, month, "01", sep = "-")))
 
 #### Save data ####
-write_csv(cleaned_data, "data/analysis_data/analysis_data.csv")
+write_csv(cleaned_data, "data/analysis_data/cleaned_data.csv")
