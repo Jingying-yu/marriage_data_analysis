@@ -40,7 +40,7 @@ Our results are summarized in @tbl-modelresults.
 
 ```{r}
 ggplot(data = data, aes(x = year, y = marriage_licenses)) +
-  geom_point(color = "blue")
+  geom_bar(stat = "identity") + labs(title = "Number of Marriage per Year from 2011 to 2024",x = "Year", y = "Number of Marriage")
 
 ```
 
