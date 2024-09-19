@@ -36,7 +36,6 @@ The remainder of this paper is structured as follows. @sec-data....
 
 # Results
 
-Our results are summarized in @tbl-modelresults.
 
 ```{r}
 ggplot(data = data, aes(x = year, y = marriage_licenses)) +
