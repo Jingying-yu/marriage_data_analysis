@@ -22,7 +22,7 @@ number_of_dates <- 100
 data <-
   tibble(
     date = as.Date(runif(n = number_of_dates, min = as.numeric())),
-    number_of_marriage = rpois(n = number_of_dates, lambda = 15)
+    number_of_marriage = rpois(n = number_of_dates, lambda = 10)
   )
 
 
