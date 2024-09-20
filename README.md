@@ -18,4 +18,4 @@ The repo is structured as:
 
 ## Statement on LLM usage
 
-Aspects of the code were written with the help of the auto-complete tool, Codriver. The abstract is written with the help of ChatGPT
+Aspects of the abstract is written with the help of ChatGPT
