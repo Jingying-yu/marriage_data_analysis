@@ -26,6 +26,8 @@ data <-
                           max = as.numeric(end_date))),
     number_of_marriage = rpois(n=number_of_dates, lambda = 10)
   )
+ 
 
+write_csv(data, "data/simulated.csv") 
 
 
